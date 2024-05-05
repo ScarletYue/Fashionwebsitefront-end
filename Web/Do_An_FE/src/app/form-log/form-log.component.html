@@ -1,0 +1,22 @@
+<p class="nb">ĐĂNG NHẬP</p>
+<div class="div">
+    <form class="row g-3" (ngSubmit)="onSubmit()">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label"  >Tên đăng nhập:</label>
+          <input type="email" class="form-control" id="inputEmail4" [(ngModel)]="loginRequest.tenDangNhap" name="ten_dang_nhap">
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Mật khẩu:</label>
+          <input type="password" class="form-control" id="inputPassword4" [(ngModel)]="loginRequest.matKhau" name="mat_khau">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary bt">Đăng nhập</button>
+        </div>
+        <div>
+          <a routerLink="/form" class="dn">Chưa có tài khoản -- > <button (click)="navigateToForm()" class=" btn btn-primary">ĐĂNG KÝ</button> </a> 
+      </div>
+      <h1></h1>
+      </form>
+    </div>
+    

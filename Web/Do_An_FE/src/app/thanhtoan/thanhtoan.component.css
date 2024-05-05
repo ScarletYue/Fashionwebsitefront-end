@@ -1,0 +1,44 @@
+.cot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}   
+.thanhtoan {
+    border: 1px solid #9f9f9f;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: -3%;
+    height: 100%;
+    font-weight: bolder;
+}
+.bt {
+    background-color: rgb(35, 35, 35);
+    color: white;
+    font-weight: bolder;
+    margin-left: 70%;
+}
+.tien {
+    float: right;
+}
+.tt {
+    font-size: 17px;
+}
+.tong {
+    font-size: 23px;
+    padding: 5%;
+}
+.tieude {
+    margin-top: 5%;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-bottom: -20%;
+    margin-left: 10%;
+    background: #919191 ;
+    display: inline-block;
+    color: #1a1a1a;
+}

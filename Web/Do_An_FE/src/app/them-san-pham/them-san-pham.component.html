@@ -1,0 +1,52 @@
+<div class="sp-grid">
+
+    <form (ngSubmit)="onSubmit()">
+    <div class="sp-container" style="margin-left: 60px;">
+        <div class="sp-details">
+            
+            <label>Loại sản phẩm:  </label>
+                <select  class="form-select form-select-sm test" aria-label="Loại sản phẩm" style="width: 60%; height: 40px; font-size: 15px; color: #000000; margin-left:25%;" [(ngModel)]="sanPham.loaiSanPham.id_LoaiSanPham" name="loaiSanPham" >
+                <option value="1">T-Shirt</option>
+                <option value="2">Jacket</option>
+                <option value="3">Hoodie</option>
+                <option value="4">Short</option>
+                <option value="5">Trousers</option>
+              </select>
+            <br>
+            <p>Tên sản phẩm: 
+            <input type="text" [(ngModel)]="sanPham.tenSanPham" placeholder="tên sản phẩm" class="text" style="height: 40px; width: 60%;"  [(ngModel)]="sanPham.tenSanPham" name="ten_san_pham">
+            </p>
+            <p>Size:
+                <input type="checkbox" id="size1" name="size1" value="S" style="margin-left: 15%;">
+                <label for="size1"> S</label>
+                <input type="checkbox" id="size2" name="size2" value="M">
+                <label for="size2"> M</label>
+                <input type="checkbox" id="size3" name="size3" value="L">
+                <label for="size3"> L</label>
+                <input type="checkbox" id="size4" name="size4" value="XL">
+                <label for="size4"> XL</label><br>
+            </p><br>
+            <p>Chất liệu:
+            <input type="text" [(ngModel)]="sanPham.chatLieu" placeholder="chất liệu" class="text" style="height: 40px; width: 60%;margin-left: 60px;" name="chat_lieu">
+            </p>
+            <p> Đối tượng: 
+            <input type="text" [(ngModel)]="sanPham.phuHop" placeholder="đối tượng" class="text" style="height: 40px; width: 60%;margin-left: 44px;" name="doi_tuong">
+            </p>
+            <p>Giá sản phẩm: <input type="text" [(ngModel)]="sanPham.gia"  placeholder="giá sản phẩm" class="text" style="height: 40px; width: 60%;margin-left: 16px;" name="gia"></p> 
+            <p>Hình ảnh:
+            <input  type="file" (change)="handleFileInput($event) ">    </p><br>
+            <p class="sp-details">Màu:
+            <select class="form-select form-select-sm" aria-label="Default select example" style="height: 40px; width: 60%;margin-left: 140px;" [(ngModel)]="sanPham.mau" name="mau">
+                <option value="Trắng" style="color: #000000; background-color: #ffffff;">Trắng</option>
+                <option value="Đen" style="color: #ffffff; background-color: #000000;">Đen</option>
+                <option value="Đỏ" style="color: #ffffff; background-color: #400000;">Đỏ</option>
+              </select> </p>
+        </div>
+        <br>
+        <div class="form-floating">
+            <p class="sp-details">Mô tả:</p>
+            <textarea [(ngModel)]="sanPham.moTa" name="mo_ta" class="form-control" placeholder="Mô tả" id="floatingTextarea2" style="height: 215px; width: 100%"></textarea>
+        </div>
+            <button type="submit" class="btn btn-secondary" style="margin: 10%;" >Thêm</button>
+    </div>
+    </form>

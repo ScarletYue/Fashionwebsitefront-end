@@ -1,0 +1,93 @@
+<nav style="--bs-breadcrumb-divider: '>'; margin-top: 5%; margin-bottom: -2%; text-decoration: none; margin-left: 3%;" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/trangchu">Trang chủ</a></li>
+      <li class="breadcrumb-item"><a routerLink="/giohang">Giỏ hàng</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+    </ol>
+  </nav>
+<div class="tieude">
+    Thanh toán
+</div>
+<div class="cot">
+    <form>
+            <p style="font-size: 20px; font-weight: bolder; background-color: rgb(157, 157, 157); padding-left: 3%; "> Thông tin thanh toán </p>
+        <div class="thanhtoan">
+            <div class="col-12">
+                <label for="inputadmin" class="form-label">Họ và tên</label>
+                <input type="admin" class="form-control" id="inputadmin" placeholder="Họ và Tên" style="width: 100%;" required>
+            <br>
+                <label for="inputadmin" class="form-label">Số điện thoại</label>
+                <input type="admin" class="form-control" id="inputadmin" placeholder="Số điện thoại" style="width: 100%;" required>
+            <br>
+                <label for="inputadmin" class="form-label">Email</label>
+                <input type="admin" class="form-control" id="inputadmin" placeholder="Email" style="width: 100%;" required>
+            <br>
+                <label for="inputadmin" class="form-label">Địa chỉ giao hàng</label>
+                <input type="admin" class="form-control" id="inputadmin" placeholder=" Địa chỉ" style="width: 100%;" required>
+            <br>
+                <label for="inputadmin" class="form-label">Tỉnh</label>
+                <select class="form-select" aria-label="Default select example" id="city" (change)="changeCity($event)" >
+                    <option *ngFor="let data of tinh" value="{{data.city}}">
+                        {{data.city}}
+                    </option>
+                </select>
+            <br>
+                <label for="inputadmin" class="form-label">TP/Thị xã/Huyện</label>
+                <select class="form-select" aria-label="Default select example" id="district">
+                    <option *ngFor="let district of districts" value="{{district}}">
+                        {{district}}
+                    </option>
+                </select>
+            <br>
+                <label for="inputadmin" class="form-label">Ghi chú đơn hàng</label>
+                <div class="form-floating">
+                <textarea class="form-control" placeholder="Ghi chú đơn hàng" id="floatingTextarea2" style="height: 120px; width: 100%;" required></textarea>
+                <label for="floatingTextarea2">Ghi chú đơn hàng</label>
+                </div>
+            </div> 
+        </div>
+    </form>
+    <form>
+        <p style="font-size: 20px; font-weight: bolder; background-color: rgb(157, 157, 157); padding-left: 3%; "> Thanh toán và Vận Chuyển </p>
+        <div class="thanhtoan">
+            <p> Chọn đơn vị Vận Chuyển </p>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Đơn vị vận chuyển</option>
+                <option value="1">Giao hàng tiết kiệm</option>
+                <option value="2">Giao hàng nhanh</option>
+                <option value="3">Viettel Post</option>
+                <option value="4">VietNam Post</option>
+              </select>
+              <br>
+              <p> Thanh Toán </p>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Thanh toán</option>
+                <option value="1">Giao hàng thanh toán</option>
+                <option value="2">Thanh toán Momo</option>
+                <option value="4">Thanh toán ZaloPay</option>
+              </select>
+        </div>
+    </form>
+    <form>
+        <p style="font-size: 20px; font-weight: bolder; background-color: rgb(157, 157, 157); padding-left: 3%; "> Thông tin đơn hàng </p>
+        <div class="thanhtoan">
+            <div class="tt">
+                Thành tiền 
+                <label class="tien"> 0đ </label>
+            </div>
+        <hr>
+            <div class="tt">
+                Phí vận chuyển 
+                <label class="tien"> 0đ </label>
+            </div>
+        <hr>
+            <div class="tong">
+                Thanh toán
+                <label class="tien"> 0đ </label>
+            </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary bt" data-bs-toggle="modal" data-bs-target="#exampleModal" >Đặt hàng </button>
+        </div>
+    </div>
+    </form>
+</div>

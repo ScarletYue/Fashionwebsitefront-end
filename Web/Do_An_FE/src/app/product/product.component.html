@@ -1,0 +1,46 @@
+<div class="trang">
+  <div class="image">
+    <div>
+      <img class="center" src="../assets/hinh/skull_boy_c1196b40c5404b7585f6e4a452c31c22.png">
+    </div>
+    <div class="overlay-text">
+      SẢN PHẨM
+    </div>
+  </div>
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="navigateToComponent()">Trang chủ</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
+    </ol>
+  </nav>
+  <div style="">
+    <div class="menu-toggle" (click)="toggleMenu()">Menu</div>
+    <div class="toolbar" [ngClass]="{ 'open': isMenuOpen }">
+      <div 
+        class="toolbar-item"
+        [class.selected]="selectedCategory === category"
+        *ngFor="let category of categories"
+        (click)="selectCategory(category)"
+      >
+        {{ category }}
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    
+    <div class="product-grid">
+      <div class="product" *ngFor="let sanpham of displaySanPhams">
+        <a [routerLink]="['/chitietsanpham',sanpham.id_SanPham]">
+          <img [src]="sanpham.duongDanAnh" alt="{{ sanpham.tenSanPham }}">
+        </a>
+        <h5>{{ sanpham.tenSanPham}}</h5>
+        <p>Giá: {{ sanpham.gia}}</p>
+      </div>
+    </div>
+  </div>
+  <div style="align-items: center;" class="pagination-container">
+    <button style="margin-left: 46%;"  class="pagination-button" (click)="goToPage((-1))"><</button>
+    <p style="display: flex; width: 40px;">{{ currentPage }}</p>
+    <button style="margin-right: 46.5%;" class="pagination-button" (click)="goToPage(+1)">></button>
+  </div>
+</div>
